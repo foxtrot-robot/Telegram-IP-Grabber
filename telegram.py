@@ -18,6 +18,5 @@ def send_welcome(message):
 @bot.message_handler(commands=['getip'])
 def get_ip(message):
 	ip = requests.get('http://ip.42.pl/raw').text
-	bot.reply_to(message, "IP Address succesfully found 🤤")
-	bot.reply_to(message, ip)
+	bot.reply_to(message, f"IP Address succesfully found 🤤" + "\n" + "`{ip}`")
 bot.polling()
